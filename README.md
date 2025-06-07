@@ -16,9 +16,6 @@ This is a simple motivational timer built with **Next.js** and **Tailwind CSS**,
 - [Next.js](https://nextjs.org/)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript] (if used)
-- [Docker] (optional for backend or DB)
-- [Cursor](https://www.cursor.sh/) for AI-assisted development
 
 ## 🛠 Setup
 
