@@ -1,0 +1,119 @@
+.messages-container {
+    height: calc(100vh - 130px);
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.message {
+    max-width: 70%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    word-wrap: break-word;
+}
+
+.message.sent {
+    margin-left: auto;
+    background-color: #007bff;
+    color: white;
+}
+
+.message.received {
+    margin-right: auto;
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+.message .timestamp {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.25rem;
+}
+
+.message .media-content {
+    max-width: 100%;
+    margin-top: 0.5rem;
+}
+
+.message .media-content video,
+.message .media-content audio {
+    max-width: 100%;
+    border-radius: 0.25rem;
+}
+
+.user-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.2s;
+}
+
+.user-item:hover {
+    background-color: #f8f9fa;
+}
+
+.user-item.active {
+    background-color: #e9ecef;
+}
+
+.user-item .status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.user-item .status.online {
+    background-color: #28a745;
+}
+
+.user-item .status.offline {
+    background-color: #dc3545;
+}
+
+#media-preview {
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+#media-preview video,
+#media-preview audio {
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+#recording-indicator {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
