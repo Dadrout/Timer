@@ -54,7 +54,6 @@ class Message(MessageBase):
     id: int
     sender_id: int
     created_at: datetime
-    media_data: Optional[bytes] = None
 
     class Config:
         from_attributes = True

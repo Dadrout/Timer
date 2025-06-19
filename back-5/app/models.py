@@ -8,6 +8,7 @@ class MessageType(enum.Enum):
     TEXT = "text"
     VOICE = "voice"
     VIDEO = "video"
+    IMAGE = "image"
 
 class Item(Base):
     __tablename__ = "items"
@@ -41,7 +42,6 @@ class Message(Base):
     message_type = Column(Enum(MessageType))
     content = Column(String, nullable=True)  # For text messages
     media_data = Column(LargeBinary, nullable=True)  # For voice/video messages
-    media_file = Column(String, nullable=True)  # Path to media file
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # Relationships

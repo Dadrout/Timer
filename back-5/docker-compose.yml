@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build: .
@@ -8,11 +6,8 @@ services:
     volumes:
       - .:/app
       - ./app/static/media:/app/static/media
-    environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
-      - REDIS_URL=redis://redis:6379/0
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+    env_file:
+      - .env
     depends_on:
       - db
       - redis
@@ -21,10 +16,8 @@ services:
     image: postgres:15
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+    env_file:
+      - .env
     ports:
       - "5432:5432"
 
@@ -39,14 +32,11 @@ services:
     volumes:
       - .:/app
       - ./app/static/media:/app/static/media
+    env_file:
+      - .env
     depends_on:
       - redis
       - db
-    environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
-      - REDIS_URL=redis://redis:6379/0
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
 
   celery_beat:
     build: .
@@ -54,14 +44,11 @@ services:
     volumes:
       - .:/app
       - ./app/static/media:/app/static/media
+    env_file:
+      - .env
     depends_on:
       - redis
       - db
-    environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
-      - REDIS_URL=redis://redis:6379/0
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
 
 volumes:
   postgres_data: 
